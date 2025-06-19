@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Muttnik Games</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <h2 class="title"><img class="logo" src="muttnik_logo.png">  Muttnik Games</h2>
+    <h3>by miinoy</h3>
+    <br>
+    <hr>
+	
+	<h1>Endothermic</h1>
+    <iframe class="game-trailer" src="https://www.youtube.com/embed/orbJ6-Hd0n8?si=Qv6BYyrgs2mXCeWK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <p>A 1-4 Player co-op horror where you and your crew must navigate the dangerous country of Valgrind while being hunted by a supernatural being. Embrace the cold or succumb to it.. </p>
+    <a id="buy-btn" class="stripe-buy-btn"  href="https://store.steampowered.com/app/1537330/Endothermic/" target="_blank" rel="noopener noreferrer">Buy</a>
+    <a href="https://store.steampowered.com/app/1537330/Endothermic/" target="_blank" rel="noopener noreferrer">Steam</a>
+    <!--a href="https://nartier.itch.io/endoparasitic-2" target="_blank" rel="noopener noreferrer">Itch</a-->
+    <br> 
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr>
+	
+
+    <h1>Courses</h1>
+    <iframe class="game-trailer" src="https://www.youtube.com/embed/WyHFpm82a6Y?si=rFbj3uLW_yPzuFqD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <p>I have a collection of game dev courses available on Udemy. (Above: How to Make a Retro FPS in Unity 6) </p>
+    <a class="btn" href="https://www.udemy.com/user/narayana-walters-2/" target="_blank" rel="noopener noreferrer">Udemy</a>
+	
+	<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <h1>Jam Entries and Old Games</h1>
+    <p>My jam entries and old games can be found here:</p>
+    <a class="btn" href="https://muttnik-games.itch.io/" target="_blank" rel="noopener noreferrer">Itch</a>
+    <a class="btn" href="https://gamejolt.com/@muttnik/games" target="_blank" rel="noopener noreferrer">Gamejolt</a>
+	
+	
+    <br>
+    <br>
+    <hr>
+    <br>
+    <div style="text-align: center;">
+        <a href="https://www.youtube.com/@decoyminoy" target="_blank" rel="noopener noreferrer"><img class="socials-btn" src="assets/logos/youtube.png" alt="Youtube" width="32" /></a>
+        <a href="https://www.tiktok.com/@muttnikgames" target="_blank" rel="noopener noreferrer"><img class="socials-btn" src="assets/logos/tik-tok.png" alt="Tiktok" width="32" /></a>
+        <a href="https://twitter.com/MuttnikGames" target="_blank" rel="noopener noreferrer"><img class="socials-btn" src="assets/logos/twitter.png" alt="Twitter" width="32" /></a>
+        <a href="https://discord.gg/JXA74uG" target="_blank" rel="noopener noreferrer"><img class="socials-btn" src="assets/logos/discord.png" alt="Discord" width="32" /></a>
+        <p>muttnikgames@gmail.com</p>
+   
+        <a href="privacy_policy.html">Privacy Policy</>
+		     <!--a href="affiliate_info.html">Affiliate Program</a-->
+        <br>
+        <!--a href="refund_policy.html">Refunds</a-->
+        <br>
+        <br>
+    </div>
+
+        <script>
+        function setupStoreOnPageLoad(){
+            var urlParams = new URLSearchParams(window.location.search);
+            var referralVia = urlParams.get('via');
+			
+			if (referralVia != null){
+				setupStore(referralVia);
+			}
+        }
+        function setupStore(referralVia){
+			var elements = document.getElementsByClassName("stripe-buy-btn");
+			for(var i = 0; i < elements.length; i++) {
+				elements[i].href += `?prefilled_promo_code=${referralVia}`;
+			}
+        }
+        window.onload = setupStoreOnPageLoad;        
+    </script>
+
+</body>
+
+</html>  
