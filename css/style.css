@@ -1,147 +1,167 @@
-* {
-    font-family: 'Courier New', Courier, monospace;
+/* Load InputMono font */
+@font-face {
+  font-family: 'InputMono';
+  src: url('fonts/InputMono-Regular.woff2') format('woff2'),
+       url('fonts/InputMono-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
+/* General font and body */
+* {
+  font-family: 'InputMono', monospace;
+}
 
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    color: white;
-    background-color: #081712;
-    float: left;
-    position: relative;
-    left: 30%;
-    width: 40%;
-	overflow-y: hidden;
+  color: white;
+  background-color: #051810; /* Slightly darker #105034 */
+  float: left;
+  position: relative;
+  left: 30%;
+  width: 40%;
+  overflow-y: hidden;
+  transition: background-color 0.2s ease-out;
 }
-
-
 
 img.logo {
-    height: 64px;
-    vertical-align: text-bottom;
+  height: 64px;
+  vertical-align: text-bottom;
 }
 
-h1 {
-    font-family:monospace;
+h1,
+h2,
+h3 {
+  font-family: 'InputMono', monospace;
+  margin: 0;
+  padding: 0;
 }
 
 h1.title {
-    font-size: 4.5em;
-    padding: 0px;
-    margin: 0px;
-}
-
-h2 {
-    font-family:monospace;
+  font-size: 4.5em;
 }
 
 h2.title {
-    font-size: 3.0em;
-    padding: 0px;
-    margin: 0px;
+  font-size: 3em;
 }
 
-@media screen and (max-width: 600px) {
-    body {
-        left: 0%;  
-        width: 95%;
-        padding: 5px;
-    }
-    h1.title {
-        font-size: 2.0em;
-        padding: 0px;
-        margin: 0px;
-    }
-    h2.title {
-        font-size: 2.0em;
-        padding: 0px;
-        margin: 0px;
-    }
-    img.logo {
-        height: 32px;
-        vertical-align: text-bottom;
-    }
-  }
-
-p {
-    font-size: 1.2em;
+p,
+a {
+  font-size: 1.2em;
 }
 
 a {
-    font-size: 1.2em;
-}
-
-a {
-    color: gray;
+  color: gray;
+  text-decoration: none;
 }
 
 a.text-link {
-    color: white;
-    font-size: 1.2em;
+  color: white;
+  font-size: 1.2em;
 }
 
 a.title-link {
-    color: white;
-    text-decoration: none;
-    font-size: 1.0em;
+  color: white;
+  font-size: 1em;
 }
 
 a.btn {
-    border: 2px solid #ffffff;
-    background: #000000;
-    padding:4px;
-    color: white;
-    text-decoration: none;
-
+  border: 2px solid #ffffff;
+  background: #000000;
+  padding: 4px 12px;
+  color: white;
+  text-decoration: none;
+  margin-right: 8px;
 }
 
-
 a.btn:hover {
-    background: white;
-    color: #000000;
+  background: white;
+  color: #000000;
 }
 
 img.socials-btn {
-    padding:4px;
-    border: 1px white;
-    text-decoration: none;
-    border-radius: 16px;
+  width: 48px; /* Bigger icons */
+  height: 48px;
+  margin: 0 12px; /* spacing left and right */
+  border-radius: 16px;
+  transition: background 0.3s ease;
+  cursor: pointer;
 }
 
 img.socials-btn:hover {
-    background: #1a1a1a;
+  background: #1a1a1a;
 }
 
-iframe {
-    width: 100%;
-    aspect-ratio: 16 / 9;
+iframe.game-trailer {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
 }
 
 #buy-btn {
-    display: inline-block;            /* Makes the link behave like a button */
-    background-color: #148c66;       /* Stripe's signature blue color */
-    color: #fff;                     /* White text */
-    font-size: 20px;                 /* Button font size */
-    font-weight: 500;                /* Medium weight */
-    text-decoration: none;           /* Remove underline */
-    text-align: center;              /* Center text */
-    padding: 12px 50px;              /* Button padding */
-    border-radius: 6px;              /* Rounded corners */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+  display: inline-block;
+  background-color: #148c66;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  padding: 12px 50px;
+  border-radius: 6px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-right: 16px;
 }
 
 #buy-btn:hover {
-    background-color: #094a35;       /* Darker blue on hover */
-    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15); /* Larger shadow on hover */
-    text-decoration: none;           /* Ensure no underline on hover */
+  background-color: #094a35;
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
 }
 
 #buy-btn:active {
-    background-color: #3a37b0;       /* Even darker blue when clicked */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Smaller shadow on click */
+  background-color: #3a37b0;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    left: 0;
+    width: 95%;
+    padding: 5px;
+    float: none;
+  }
+
+  h1.title {
+    font-size: 2em;
+  }
+
+  h2.title {
+    font-size: 2em;
+  }
+
+  img.logo {
+    height: 32px;
+  }
+
+  img.socials-btn {
+    width: 36px;
+    height: 36px;
+    margin: 0 8px;
+  }
+}
+
+/* Socials container center */
+.socials-container {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
