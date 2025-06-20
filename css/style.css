@@ -155,41 +155,55 @@ iframe.game-trailer {
 /* Responsive adjustments */
 @media screen and (max-width: 600px) {
   html, body {
-    width: 100%;
-    padding: 0;
+    padding: 0 16px;               /* Add breathing room on left and right */
     margin: 0;
+    width: 100%;
     float: none;
     left: 0;
+    box-sizing: border-box;
   }
 
   body {
-    box-sizing: border-box;
-    padding: 32px 24px; /* top-bottom, left-right */
-    width: 100%;
+    padding-top: 32px;
+    padding-bottom: 32px;
   }
 
-  .top-header {
-    margin-top: 40px;
-    text-align: center;
-  }
-
-  h1.title, h2.title {
+  h1.title {
     font-size: 2em;
   }
 
+  h2.title {
+    font-size: 2em;
+  }
+
+  h3 {
+    font-size: 1.2em;
+  }
+
+  p,
+  a {
+    font-size: 1em;               /* Slightly smaller for mobile readability */
+  }
+
   img.logo {
-    height: 40px;
+    height: 32px;
   }
 
   iframe.game-trailer {
     width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
   }
 
-  .btn, #buy-btn, a {
-    display: inline-block;
-    font-size: 1.1em;
-    margin-top: 8px;
-    margin-bottom: 8px;
+  #buy-btn {
+    font-size: 1em;
+    padding: 10px 30px;
+    margin-bottom: 12px;
+  }
+
+  a.btn {
+    padding: 6px 10px;
+    font-size: 0.9em;
   }
 
   img.socials-btn {
@@ -199,9 +213,11 @@ iframe.game-trailer {
   }
 
   .socials-container {
-    margin-top: 40px;
-    padding: 0 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
+}
+
 
   p {
     font-size: 1.1em;
