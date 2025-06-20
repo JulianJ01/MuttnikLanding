@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Muttnik Games</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  
+
   <!-- Load InputMono font from local files -->
   <style>
     @font-face {
@@ -17,19 +17,167 @@
       font-style: normal;
       font-display: swap;
     }
-    /* Use InputMono globally */
+
     * {
       font-family: 'InputMono', monospace;
     }
+
+    html,
+    body {
+      max-width: 100%;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      color: white;
+      background-color: #051810;
+      float: left;
+      position: relative;
+      left: 30%;
+      width: 40%;
+      overflow-y: hidden;
+      transition: background-color 0.2s ease-out;
+    }
+
+    .top-header {
+      margin-top: 80px;
+    }
+
+    img.logo {
+      height: 64px;
+      vertical-align: text-bottom;
+    }
+
+    h1, h2, h3 {
+      font-family: 'InputMono', monospace;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1.title {
+      font-size: 4.5em;
+    }
+
+    h2.title {
+      font-size: 3em;
+    }
+
+    p, a {
+      font-size: 1.2em;
+    }
+
+    a {
+      color: gray;
+      text-decoration: none;
+    }
+
+    a.text-link {
+      color: white;
+    }
+
+    a.title-link {
+      color: white;
+      font-size: 1em;
+    }
+
+    a.btn {
+      border: 2px solid #ffffff;
+      background: #000000;
+      padding: 4px 12px;
+      color: white;
+      text-decoration: none;
+      margin-right: 8px;
+    }
+
+    a.btn:hover {
+      background: white;
+      color: #000000;
+    }
+
+    img.socials-btn {
+      width: 48px;
+      height: 48px;
+      margin: 0 12px;
+      border-radius: 16px;
+      transition: background 0.3s ease;
+      cursor: pointer;
+    }
+
+    img.socials-btn:hover {
+      background: #1a1a1a;
+    }
+
+    iframe.game-trailer {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: none;
+    }
+
+    #buy-btn {
+      display: inline-block;
+      background-color: #148c66;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 500;
+      text-decoration: none;
+      text-align: center;
+      padding: 12px 50px;
+      border-radius: 6px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      margin-right: 16px;
+    }
+
+    #buy-btn:hover {
+      background-color: #094a35;
+      box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    #buy-btn:active {
+      background-color: #3a37b0;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .socials-container {
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    @media screen and (max-width: 600px) {
+      body {
+        left: 0;
+        width: 95%;
+        padding: 5px;
+        float: none;
+      }
+
+      h1.title, h2.title {
+        font-size: 2em;
+      }
+
+      img.logo {
+        height: 32px;
+      }
+
+      img.socials-btn {
+        width: 36px;
+        height: 36px;
+        margin: 0 8px;
+      }
+    }
   </style>
-  
-  <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
-  <h2 class="title">
-    <img class="logo" src="muttnik_logo.png" alt="Muttnik Logo" /> Muttnik Games
-  </h2>
-  <h3>by miinoy</h3>
+  <div class="top-header">
+    <h2 class="title">
+      <img class="logo" src="muttnik_logo.png" alt="Muttnik Logo" /> Muttnik Games
+    </h2>
+    <h3>by miinoy</h3>
+  </div>
   <br />
   <hr />
 
@@ -46,17 +194,8 @@
     A 1-4 Player co-op horror where you and your crew must navigate the dangerous country of
     Valgrind while being hunted by a supernatural being. Embrace the cold or succumb to it..
   </p>
-  <a
-    id="buy-btn"
-    class="stripe-buy-btn"
-    href="https://store.steampowered.com/app/1537330/Endothermic/"
-    target="_blank"
-    rel="noopener noreferrer"
-    >Buy</a
-  >
-  <a href="https://store.steampowered.com/app/1537330/Endothermic/" target="_blank" rel="noopener noreferrer"
-    >Steam</a
-  >
+  <a id="buy-btn" class="stripe-buy-btn" href="https://store.steampowered.com/app/1537330/Endothermic/" target="_blank" rel="noopener noreferrer">Buy</a>
+  <a href="https://store.steampowered.com/app/1537330/Endothermic/" target="_blank" rel="noopener noreferrer">Steam</a>
 
   <br /><br /><br /><br /><hr />
 
@@ -73,20 +212,11 @@
   <br /><br /><hr /><br />
 
   <div class="socials-container">
-    <a href="https://www.youtube.com/@decoyminoy" target="_blank" rel="noopener noreferrer"
-      ><img class="socials-btn" src="assets/logos/youtube.png" alt="Youtube" />
-    </a>
-    <a href="https://www.tiktok.com/@muttnikgames" target="_blank" rel="noopener noreferrer"
-      ><img class="socials-btn" src="assets/logos/tik-tok.png" alt="Tiktok" />
-    </a>
-    <a href="https://twitter.com/MuttnikGames" target="_blank" rel="noopener noreferrer"
-      ><img class="socials-btn" src="assets/logos/twitter.png" alt="Twitter" />
-    </a>
-    <a href="https://discord.gg/H2BbBVf9x8" target="_blank" rel="noopener noreferrer"
-      ><img class="socials-btn" src="assets/logos/discord.png" alt="Discord" />
-    </a>
+    <a href="https://www.youtube.com/@decoyminoy" target="_blank" rel="noopener noreferrer"><img class="socials-btn" src="assets/logos/youtube.png" alt="Youtube" /></a>
+    <a href="https://www.tiktok.com/@muttnikgames" target="_blank" rel="noopener noreferrer"><img class="socials-btn" src="assets/logos/tik-tok.png" alt="Tiktok" /></a>
+    <a href="https://twitter.com/MuttnikGames" target="_blank" rel="noopener noreferrer"><img class="socials-btn" src="assets/logos/twitter.png" alt="Twitter" /></a>
+    <a href="https://discord.gg/H2BbBVf9x8" target="_blank" rel="noopener noreferrer"><img class="socials-btn" src="assets/logos/discord.png" alt="Discord" /></a>
     <p>muttnikgames@gmail.com</p>
-
     <a href="privacy_policy.html">Privacy Policy</a>
     <br /><br />
   </div>
