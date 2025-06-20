@@ -8,9 +8,11 @@
   font-display: swap;
 }
 
-/* General font and body */
-* {
-  font-family: 'InputMono', monospace;
+/* CSS Reset + base box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 html,
@@ -19,8 +21,10 @@ body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  font-family: 'InputMono', monospace;
 }
 
+/* Body styling */
 body {
   color: white;
   background-color: #051810; /* Slightly darker #105034 */
@@ -32,11 +36,13 @@ body {
   transition: background-color 0.2s ease-out;
 }
 
+/* Logo */
 img.logo {
   height: 64px;
   vertical-align: text-bottom;
 }
 
+/* Headings */
 h1,
 h2,
 h3 {
@@ -53,19 +59,21 @@ h2.title {
   font-size: 3em;
 }
 
+/* Paragraphs and links */
 p,
 a {
   font-size: 1.2em;
+  font-family: inherit;
 }
 
 a {
   color: gray;
   text-decoration: none;
+  line-height: 1;
 }
 
 a.text-link {
   color: white;
-  font-size: 1.2em;
 }
 
 a.title-link {
@@ -87,25 +95,38 @@ a.btn:hover {
   color: #000000;
 }
 
+/* Social media icons */
 img.socials-btn {
-  width: 48px; /* Bigger icons */
+  width: 48px;
   height: 48px;
-  margin: 0 12px; /* spacing left and right */
+  margin: 0 12px;
   border-radius: 16px;
   transition: background 0.3s ease;
   cursor: pointer;
+  display: inline-block;
+  object-fit: contain;
 }
 
+/* Optional: Add hover background effect */
 img.socials-btn:hover {
   background: #1a1a1a;
 }
 
+/* Socials wrapper */
+.socials-container {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Embedded trailer */
 iframe.game-trailer {
   width: 100%;
   aspect-ratio: 16 / 9;
   border: none;
 }
 
+/* Buy button */
 #buy-btn {
   display: inline-block;
   background-color: #148c66;
@@ -124,7 +145,6 @@ iframe.game-trailer {
 #buy-btn:hover {
   background-color: #094a35;
   box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
-  text-decoration: none;
 }
 
 #buy-btn:active {
@@ -132,6 +152,7 @@ iframe.game-trailer {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* Responsive adjustments */
 @media screen and (max-width: 600px) {
   body {
     left: 0;
@@ -157,11 +178,4 @@ iframe.game-trailer {
     height: 36px;
     margin: 0 8px;
   }
-}
-
-/* Socials container center */
-.socials-container {
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
 }
